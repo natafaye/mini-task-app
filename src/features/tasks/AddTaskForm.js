@@ -3,7 +3,15 @@ import React from 'react'
 export default function AddTaskForm() {
   return (
     <div className="row">
-        Show a text box for the text, a drop down for the priority (1-5), and a button to add the task
+        <input type="text" placeholder="New Task Text"></input>
+        <select>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <button>Add Task</button>
     </div>
   )
 }
