@@ -10,10 +10,14 @@ export const taskSlice = createSlice({
     deleteTask: (state, action) => {
       const indexToRemove = state.entities.findIndex((task) => task.id === action.payload);
       state.entities.splice(indexToRemove, 1);
+    },
+    addTask: (state, action) => {
+      const task = { ...action.payload, id: state.entities[state.entities.length-1].id + 1 };
+      state.entities.push(task);
     }
   },
 });
 
-export const { deleteTask } = taskSlice.actions;
+export const { deleteTask, addTask } = taskSlice.actions;
 
 export default taskSlice.reducer;
