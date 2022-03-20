@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { deleteTask } from './taskSlice';
 
 export default function TaskListItem({ task }) {
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
 
   const onDeleteClicked = () => {
     dispatch(deleteTask(task.id));
@@ -16,7 +16,7 @@ export default function TaskListItem({ task }) {
         &nbsp;{ task.text }&nbsp;
         <span className="badge bg-secondary rounded-pill">{ task.priority }</span>
       </div>
-      <button class="btn btn-danger" onClick={onDeleteClicked} >Delete</button>
+      <button className="btn btn-danger" onClick={onDeleteClicked} >Delete</button>
     </li>
   )
 }
