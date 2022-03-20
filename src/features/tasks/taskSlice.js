@@ -7,12 +7,13 @@ export const taskSlice = createSlice({
     entities: INITIAL_TASKS,
   },
   reducers: {
-    something: (state, action) => {
-      // Use action.payload to change state
+    addTask: (state, action) => {
+      const task = { ...action.payload, id: state.entities[state.entities.length-1].id + 1 };
+      state.entities.push(task);
     }
   },
 });
 
-export const { something } = taskSlice.actions;
+export const { addTask } = taskSlice.actions;
 
 export default taskSlice.reducer;
