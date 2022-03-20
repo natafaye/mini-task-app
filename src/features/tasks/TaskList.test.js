@@ -5,7 +5,6 @@ import { screen } from '@testing-library/dom';
 
 describe("TaskList", () => {
     it("displays one transaction's data correctly", () => {
-
         const testState = {
             tasks: {
                 entities: [
@@ -21,7 +20,11 @@ describe("TaskList", () => {
         }
 
         render(<TaskList />, { preloadedState: testState })
+
+        const listItem = screen.getByRole('listitem');
+        expect(listItem).toHaveTextContent(/Laundry 3/i);
     })
+    
     it("deletes the task", () => {
 
         const testState = {
