@@ -2,10 +2,13 @@ import React from 'react'
 
 export default function TaskListItem({ task }) {
   return (
-    <li className="list-group-item">
-        <p>Show the tasks' text and priority and a checkbox and a delete button as a Bootstrap list group item</p>
-        <a href="https://getbootstrap.com/docs/5.1/components/list-group/">Bootstrap Reference</a>
-        <button class="btn btn-danger">Delete</button>
+    <li className="list-group-item d-flex align-items-center justify-content-between">
+      <div>
+        <input type="checkbox" />
+        &nbsp;{ task.text }&nbsp;
+        <span className="badge bg-secondary rounded-pill">{ task.priority }</span>
+      </div>
+      <button className="btn btn-danger">Delete</button>
     </li>
   )
 }

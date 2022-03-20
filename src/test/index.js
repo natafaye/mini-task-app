@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
-import taskReducer from '../tasks/taskSlice';
+import taskReducer from '../features/tasks/taskSlice';
 
 /**
  * Overrides React Testing Library's render method to add wrappers for React Router and Redux
