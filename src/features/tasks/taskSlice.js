@@ -7,12 +7,13 @@ export const taskSlice = createSlice({
     entities: INITIAL_TASKS,
   },
   reducers: {
-    something: (state, action) => {
-      // Use action.payload to change state
+    deleteTask: (state, action) => {
+      const indexToRemove = state.entities.findIndex((task) => task.id === action.payload);
+      state.entities.splice(indexToRemove, 1);
     }
   },
 });
 
-export const { something } = taskSlice.actions;
+export const { deleteTask } = taskSlice.actions;
 
 export default taskSlice.reducer;
